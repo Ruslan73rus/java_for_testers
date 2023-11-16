@@ -5,6 +5,8 @@ public record Triangle (
     double bSide,
     double cSide)
 {
+
+
     public static void printTrianglePerimeter(Triangle x) {
         String text = String.format("Периметр треугольника со сторонами %f + %f + %f = %f", x.aSide, x.bSide, x.cSide, x.perimeter());
         System.out.println(text);
@@ -17,6 +19,6 @@ public record Triangle (
         System.out.println(text);
     }
     public double area()
-    {double p = (this.aSide + this.bSide + this.cSide) / 2;
+    {double p = (this.perimeter()) / 2;
         return Math.sqrt(p * (p - this.aSide) * (p - this.bSide) * (p - this.cSide)); }
     }

@@ -17,4 +17,4 @@ public class TriangleTests {
         double result = t.perimeter();
         Assertions.assertEquals(15, new Triangle( 5.0, 5.0, 5.0).perimeter());
     }
-}
+    }
