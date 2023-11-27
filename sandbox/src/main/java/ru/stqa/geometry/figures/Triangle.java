@@ -6,7 +6,14 @@ public record Triangle (
     double cSide)
 {
 
-
+    public Triangle {
+        if (aSide < 0 || bSide < 0 || cSide < 0) {
+            throw new IllegalArgumentException("Triangle side should be non-negative");
+        }
+        if (aSide + bSide < cSide || aSide + cSide < bSide || cSide + bSide < aSide) {
+            throw new IllegalArgumentException("Triangle should not be with violation ofi inequality");
+        }
+    }
     public static void printTrianglePerimeter(Triangle x) {
         String text = String.format("Периметр треугольника со сторонами %f + %f + %f = %f", x.aSide, x.bSide, x.cSide, x.perimeter());
         System.out.println(text);

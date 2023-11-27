@@ -7,7 +7,6 @@ public record Rectangle(
     public Rectangle {
         if (a < 0 || b < 0) {
             throw new IllegalArgumentException("Rectangle side should be non-negative");
-
         }
     }
 

@@ -17,4 +17,30 @@ public class TriangleTests {
         double result = t.perimeter();
         Assertions.assertEquals(15, new Triangle( 5.0, 5.0, 5.0).perimeter());
     }
+
+    @Test
+    void cannotCreateTriangleWithNegativeSide(){
+        try {
+            new Triangle(-5.0,5.0,5.0);
+            Assertions.fail();
+            new Triangle(5.0,-5.0,5.0);
+            Assertions.fail();
+            new Triangle(5.0,5.0,-5.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception){
+        }
     }
+
+    @Test
+    void cannotCreateTriangleWithViolationOfiInequality(){
+        try {
+            new Triangle(1.0,1.0,3.0);
+            Assertions.fail();
+            new Triangle(1.0,3.0,1.0);
+            Assertions.fail();
+            new Triangle(3.0,1.0,1.0);
+            Assertions.fail();
+        } catch (IllegalArgumentException exception){
+        }
+    }
+}
