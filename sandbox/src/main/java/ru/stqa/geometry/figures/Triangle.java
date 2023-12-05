@@ -11,7 +11,7 @@ public record Triangle (
             throw new IllegalArgumentException("Triangle side should be non-negative");
         }
         if (aSide + bSide < cSide || aSide + cSide < bSide || cSide + bSide < aSide) {
-            throw new IllegalArgumentException("Triangle should not be with violation ofi inequality");
+            throw new IllegalArgumentException("Triangle should not be with violation of ilnequality");
         }
     }
     public static void printTrianglePerimeter(Triangle x) {
