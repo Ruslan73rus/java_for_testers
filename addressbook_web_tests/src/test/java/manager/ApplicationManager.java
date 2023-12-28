@@ -5,15 +5,22 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ApplicationManager {
     protected WebDriver driver;
     private LoginHelper session;
     private GroupHelper groups;
 
-    public void init() {
+    public void init(String browser) {
         if (driver == null) {
-            driver = new ChromeDriver();
+            if ("Chrome".equals(browser)) {
+                driver = new ChromeDriver();
+            } else if ("Firefox".equals(browser)) {
+                    driver = new FirefoxDriver();
+            } else {
+                throw new IllegalArgumentException(String.format("Unknown browser %s", browser));
+            }
             Runtime.getRuntime().addShutdownHook(new Thread(driver::quit));
             driver.get("http://localhost/addressbook/");
             driver.manage().window().setSize(new Dimension(1070, 570));
@@ -32,7 +39,7 @@ public class ApplicationManager {
         if (groups == null) {
             groups = new GroupHelper(this);
         }
-        return groups
+        return groups;
     }
 
     public boolean isElementPresent(By locator) {
