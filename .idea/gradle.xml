@@ -5,7 +5,10 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/addressbook_web_tests" />
+<<<<<<< Updated upstream
         <option name="gradleHome" value="" />
+=======
+>>>>>>> Stashed changes
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/addressbook_web_tests" />
