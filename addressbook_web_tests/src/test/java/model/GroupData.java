@@ -6,7 +6,7 @@ public record GroupData(String name, String header, String footer) {
         this("","","");
     }
 
-    public GroupData withNAme(String name) {
+    public GroupData withName(String name) {
         return new GroupData(name, this.header, this.footer);
     }
     public GroupData withHeader(String header) {
